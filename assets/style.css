@@ -1,0 +1,665 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte e cores básicas */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  position: relative;
+}
+
+/* Parte superior */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0px 10px;
+}
+
+.logo img {
+  max-width: 150px; /* Ajustar o tamanho da logo */
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-info div {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  font-size: 18px;
+}
+
+.contact-info i {
+  margin-right: 5px;
+  color: #009688; /* Cor ícone verde água */
+}
+
+.contact-info a {
+  color: #009688; /* Cor do link */
+  text-decoration: none; /* Remove o sublinhado */
+  font-weight: bold;
+  transition: color 0.3s ease; /* Transição suave para a cor */
+  font-size: 14px;
+}
+
+.contact-info a:hover {
+  color: #45a049; /* Cor ao passar o mouse */
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.contact-info span {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* Parte inferior - menu de navegação */
+.bottom-header {
+  display: flex;
+  justify-content: center;
+  background-color: #009688; /* Cor de fundo do menu */
+  padding: 10px 0;
+  align-items: center;
+}
+
+.bottom-header ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.bottom-header ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
+}
+
+.bottom-header ul li a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute; /* Para posicionar no canto direito */
+  top: 20px; /* Distância do topo */
+  right: 20px; /* Distância da direita */
+}
+
+.navbar {
+  display: none; /* Esconde o navbar por padrão */
+  background-color: #009688;
+  position: absolute;
+  top: 60px; /* Distância do topo, para não ficar sobre o menu hamburguer */
+  right: 20px; /* Alinhado à direita */
+  width: 180px;
+  z-index: 1000;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease; /* Suaviza a transição */
+}
+
+.navbar.active {
+  display: block; /* Mostra o navbar quando ativo */
+  margin-top: 10px; /* Adiciona margem acima do menu quando aberto */
+  background-color: rgba(0, 150, 136, 0.7); /* Cor com 80% de opacidade */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 10px; /* Adiciona padding para um melhor espaçamento */
+  transition: max-height 0.3s ease, opacity 0.3s ease; /* Suaviza a transição */
+  max-height: 300px; /* Define uma altura máxima para a transição */
+  opacity: 1; /* Opacidade do menu */
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  padding: 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar li:hover {
+  background-color: #45a049;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url("./capa1.jpeg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding-top: 120px;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    1,
+    148,
+    142,
+    0.502
+  ); /* Camada branca semitransparente */
+  z-index: -1;
+}
+
+.hero-content {
+  padding: 0 15px;
+}
+
+.hero h1 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.hero p {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button {
+  background-color: #01948e;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button:hover {
+  background-color: #fff;
+  color: #01948e;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+/* Seção de Benefícios */
+.benefits {
+  padding: 3rem 1rem;
+  background-color: #eafdf9;
+  text-align: center;
+}
+
+.benefits h2 {
+  margin-bottom: 2rem;
+}
+
+.benefits-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.benefit {
+  text-align: center;
+  margin: 1rem;
+}
+
+.benefit img {
+  width: 250px;
+  margin-bottom: 1rem;
+}
+
+.benefit p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.benefit p.saiba {
+  font-size: 14px;
+}
+
+/* Estilo para o Popup */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+  overflow: auto; /* Permitir rolagem se necessário */
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: auto;
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra mais profunda */
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Efeito de zoom */
+  max-height: 80%; /* Limitar a altura do conteúdo */
+  overflow-y: auto; /* Rolagem dentro do popup se o conteúdo for grande */
+  position: relative;
+
+  /* Adicionando a imagem de fundo */
+  background-image: url(logo.png); /* Insira aqui o caminho correto para sua logo */
+  background-size: contain; /* Ajustar o tamanho da logo */
+  background-position: center center; /* Centralizar a logo */
+  background-repeat: no-repeat; /* Evitar repetição da logo */
+  background-blend-mode: lighten; /* Mesclar a imagem de fundo com o conteúdo */
+  opacity: 0.9;
+
+  /* Adiciona um fundo branco com transparência para clarear a imagem */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.85
+  ); /* Fundo branco com 80% de opacidade */
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.popup-content:hover {
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+.popup-icon {
+  font-size: 50px;
+  color: #009688; /* Cor verde água para os ícones */
+  margin-bottom: 15px;
+}
+
+.close {
+  position: absolute; /* Mantém o botão fixo */
+  top: 15px; /* Define a posição a partir do topo da viewport */
+  right: 25px; /* Define a posição a partir da lateral direita */
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  z-index: 1001; /* Garante que o botão fique acima de outros elementos */
+}
+
+.close:hover {
+  color: #999;
+}
+
+.popup-content h3 {
+  font-size: 24px;
+  color: #009688;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra no texto */
+}
+
+.popup-content p {
+  font-size: 18px;
+  color: #333;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave no parágrafo */
+  line-height: 1.6;
+}
+
+.popup-content i {
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Seção de Serviços */
+.services {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: #f1f8f4c9;
+}
+
+.services h2 {
+  margin-bottom: 2rem;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.service {
+  text-align: center;
+  margin: 1rem;
+}
+
+.service img {
+  width: 250px;
+  margin-bottom: 1rem;
+}
+
+/* Animações de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito para os itens da sessão de Benefícios */
+.benefit,
+.service {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.benefit:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.benefit:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.benefit:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.service:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.service:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.service:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.service:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+/* Efeito de Zoom nas Imagens ao passar o mouse */
+.benefit img,
+.service img {
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.benefit:hover img,
+.service:hover img {
+  transform: scale(1.1); /* Zoom */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra ao hover */
+}
+
+/* Transições e animações no hover do texto */
+.benefit p,
+.service p {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.benefit:hover p,
+.service:hover p {
+  color: #00796b; /* Mudança para verde água */
+  transform: translateY(-10px); /* Leve "salto" no hover */
+}
+
+/* Centralizando e ajustando as imagens */
+.benefits-container,
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+}
+
+.benefit,
+.service {
+  margin: 10px;
+  width: 22%;
+  box-sizing: border-box;
+}
+
+/* Seção de Testemunhos */
+.testimonials {
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.testimonial {
+  margin: 1.5rem 0;
+}
+
+/* Seção de Contato */
+.contact {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 20px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.contact input,
+.contact textarea {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.contact button {
+  padding: 1rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact button:hover {
+  background-color: #3e8e41;
+}
+
+/* Rede Social*/
+
+.social-links {
+  text-align: center; /* Centraliza os ícones */
+  margin-top: 20px; /* Espaço acima da seção de ícones */
+  position: relative;
+}
+
+.social-links a {
+  position: relative;
+  margin: 0 15px;
+  font-size: 24px; /* Ajuste o tamanho do ícone aqui */
+  color: #009688; /* Cor dos ícones */
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #45a049; /* Cor ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #333;
+  color: white;
+}
+
+/* Botão para voltar ao topo */
+#scrollToTop {
+  display: none; /* Inicialmente escondido */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 132, 119, 0.7); /* Cor #008477 com transparência */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+#scrollToTop:hover {
+  background-color: rgba(
+    0,
+    107,
+    97,
+    0.9
+  ); /* Cor mais escura ao passar o mouse */
+}
+
+#scrollToTop i {
+  font-size: 24px; /* Tamanho do ícone */
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+  .bottom-header {
+    display: none; /* Oculta o menu padrão */
+  }
+
+  .contact-info {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 3rem; /* Aumenta o tamanho da fonte do menu hambúrguer */
+    padding: 10px; /* Adiciona um pouco de padding */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: transform 0.3s ease; /* Suaviza a transformação do botão */
+  }
+
+  .menu-toggle:active {
+    transform: scale(0.95); /* Levemente reduz o tamanho ao clicar */
+  }
+
+  .navbar.active {
+    display: block;
+    margin-top: 40px;
+    max-height: 300px; /* Ajuste conforme necessário */
+    opacity: 1;
+  }
+
+  .navbar ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+  }
+
+  .navbar li {
+    margin: 5px 0; /* Adiciona margem entre os itens do menu */
+    font-weight: bold;
+  }
+
+  .hero .hero-content h1 {
+    font-size: 3rem; /* Diminui o tamanho da fonte no título */
+  }
+
+  .hero p {
+    font-size: 1.5rem; /* Diminui o tamanho da fonte no parágrafo */
+  }
+
+  .benefits-container {
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .benefit {
+    margin: 0.5rem 0; /* Margem vertical menor */
+  }
+
+  .services-container {
+    flex-direction: column; /* Alinha os serviços verticalmente */
+    align-items: center; /* Centraliza os serviços */
+  }
+}
+
+@media (max-width: 480px) {
+  header .logo img {
+    width: 150px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero .cta-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .benefit,
+  .service {
+    width: 90%;
+    margin: 10px auto;
+  }
+}

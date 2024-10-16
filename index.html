@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuidar no Lar - Cuidado humanizado</title>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/style.css" />
+
+    <!-- Adicionando Font Awesome para o ícone -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Parte superior com logo e dados de contato -->
+      <div class="top-header">
+        <div class="logo">
+          <img src="assets/logo-verde.png" alt="Logo" />
+        </div>
+        <div class="contact-info">
+          <div>
+            <i class="fas fa-clock"></i>
+            <span>Atendimento</span> 24h / 7 dias da semana
+          </div>
+          <div>
+            <i class="fas fa-envelope"></i>
+            <span>Email</span> <a href="#contato">Enviar Mensagem</a>
+          </div>
+          <div>
+            <i class="fas fa-phone"></i>
+            <span>Telefone</span> (32) 99867-1907
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">☰</div>
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="#hero">INÍCIO</a></li>
+          <li><a href="#beneficio">BENEFÍCIOS</a></li>
+          <li><a href="#servicos">SERVIÇOS</a></li>
+          <li><a href="#clientes">TESTEMUNHOS</a></li>
+          <li><a href="#contato">CONTATO</a></li>
+        </ul>
+      </nav>
+
+      <!-- Parte inferior com o menu de navegação -->
+      <nav class="bottom-header">
+        <ul>
+          <li><a href="#hero">INÍCIO</a></li>
+          <li><a href="#beneficio">BENEFÍCIOS</a></li>
+          <li><a href="#servicos">SERVIÇOS</a></li>
+          <li><a href="#clientes">TESTEMUNHOS</a></li>
+          <li><a href="#contato">CONTATO</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Cabeçalho (Hero Section) -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1>Cuidar no Lar</h1>
+        <p>Cuidado humanizado e personalizado no conforto de seu lar</p>
+        <a href="#contato" class="cta-button">Agende sua Avaliação Gratuita</a>
+      </div>
+    </section>
+
+    <!-- Seção de Benefícios -->
+    <section class="benefits" id="beneficio">
+      <h2>Por que Escolher o Cuidar no Lar?</h2>
+      <div class="benefits-container">
+        <div class="benefit" onclick="openPopup('popup1')">
+          <img
+            src="./assets/enferm-domiciliar.jpg"
+            alt="Atendimento Especializado"
+          />
+          <p>Atendimento Especializado</p>
+          <p class="saiba">Saiba Mais...</p>
+        </div>
+        <div class="benefit" onclick="openPopup('popup2')">
+          <img src="./assets/humanizado.jpg" alt="Cuidado Humanizado" />
+          <p>Cuidado Humanizado</p>
+          <p class="saiba">Saiba Mais...</p>
+        </div>
+        <div class="benefit" onclick="openPopup('popup3')">
+          <img src="./assets/atend-especializado.jpg" alt="Suporte 24 horas" />
+          <p>Suporte Personalizado</p>
+          <p class="saiba">Saiba Mais...</p>
+        </div>
+        <div class="benefit" onclick="openPopup('popup4')">
+          <img src="./assets/planos1.jpg" alt="Planos Acessíveis" />
+          <p>Planos Acessíveis</p>
+          <p class="saiba">Saiba Mais...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popups -->
+    <div id="popup1" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup('popup1')">&times;</span>
+        <i class="fas fa-user-md popup-icon"></i>
+        <!-- Ícone para Atendimento Especializado -->
+        <h3>Atendimento Especializado</h3>
+        <p>
+          O atendimento especializado em um serviço de Home Care com foco em
+          cuidado humanizado é essencial para garantir o bem-estar e a qualidade
+          de vida dos pacientes. Este tipo de cuidado vai além do tratamento
+          clínico, considerando as necessidades individuais de cada pessoa e
+          promovendo a dignidade e o respeito em todas as interações. <br />
+          <br />
+          Nesse modelo de cuidado, a administração de medicamentos, a realização
+          de curativos, o monitoramento de sinais vitais e a terapia ocupacional
+          são serviços essenciais, que são realizados com respeito e atenção às
+          particularidades de cada pessoa. <br />
+          <br />
+          Com um atendimento especializado, aliado à sensibilidade e ao
+          respeito, o Cuidar no Lar transforma o cuidado em um momento de
+          acolhimento e recuperação.
+        </p>
+      </div>
+    </div>
+
+    <div id="popup2" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup('popup2')">&times;</span>
+        <i class="fas fa-heart popup-icon"></i>
+        <!-- Ícone para Atendimento Especializado -->
+        <h3>Cuidado Humanizado</h3>
+        <p>
+          O cuidado humanizado é uma abordagem essencial para garantir o
+          bem-estar integral do paciente. Ele se baseia em práticas que tratam
+          cada indivíduo como único, respeitando suas necessidades físicas,
+          emocionais e psicológicas. Algumas características do cuidado
+          humanizado são: tratar o paciente de forma individualizada, escutando
+          e compreendendo suas queixas, e sempre considerando seu estado
+          emocional. Além disso, chamar o paciente pelo nome é uma prática que
+          fortalece o vínculo, mesmo nos casos em que a comunicação verbal é
+          limitada. <br /><br />
+          Outro aspecto fundamental é transmitir segurança nas técnicas e
+          procedimentos, assegurando que a equipe está bem preparada e
+          atualizada nos estudos. Para isso, é essencial esclarecer cada
+          procedimento e os passos a serem seguidos, promovendo uma relação de
+          confiança com o paciente e seus familiares. <br /><br />
+          O cuidado humanizado oferece inúmeros benefícios. Dentre eles,
+          destaca-se a maior adesão ao tratamento, pois o paciente se sente
+          acolhido e compreendido. Além disso, contribui para a redução do
+          estresse e da ansiedade, favorecendo a recuperação e o bem-estar. Essa
+          abordagem também facilita a detecção precoce de problemas e a sua
+          prevenção, uma vez que o profissional está atento ao contexto integral
+          do paciente. Como resultado, há maior satisfação pós-atendimento, o
+          que promove a fidelização do paciente. <br /><br />
+          Ademais, uma equipe que adota o cuidado humanizado tende a ser mais
+          satisfeita e engajada, refletindo diretamente na qualidade do
+          atendimento prestado. O Cuidar no Lar valoriza essa abordagem que
+          transforma a experiência de cuidado, oferecendo um ambiente de
+          confiança e respeito mútuo.
+        </p>
+      </div>
+    </div>
+
+    <div id="popup3" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup('popup3')">&times;</span>
+        <i class="fas fa-hand-holding-heart popup-icon"></i>
+        <h3>Suporte Personalizado</h3>
+        <p>
+          O suporte personalizado é um dos pilares fundamentais para uma quem
+          tem sua identidade focada no cuidado humanizado. Esse tipo de suporte
+          vai além das técnicas tradicionais, valorizando a individualidade de
+          cada paciente e colocando suas necessidades físicas, emocionais e
+          sociais em primeiro lugar. <br /><br />
+          Características de um suporte personalizado incluem a atenção
+          individualizada, onde cada idoso é tratado de forma única, respeitando
+          sua história e suas particularidades. Um cuidador que pratica o
+          cuidado humanizado escuta e compreende as reclamações do paciente,
+          considerando também o estado emocional em cada momento. Chamar o idoso
+          pelo nome e tratá-lo com respeito, independentemente de seu estado
+          físico ou mental, reforça a dignidade do paciente, criando um ambiente
+          de confiança e acolhimento. <br /><br />
+          A transmissão de segurança através de técnicas bem aplicadas e com
+          base em estudos atualizados é outro aspecto essencial do suporte
+          personalizado. Quando o cuidador explica cada procedimento e os passos
+          a serem seguidos, o paciente se sente mais tranquilo e informado,
+          aumentando a adesão ao tratamento e reduzindo o estresse e a
+          ansiedade. <br /><br />
+          Esse tipo de abordagem traz benefícios como a maior satisfação no
+          pós-atendimento, fidelizando o paciente e sua família. Além disso, a
+          prática do cuidado personalizado permite a detecção precoce de
+          problemas e a prevenção de complicações futuras. <br /><br />
+          Um suporte personalizado é, portanto, mais do que uma necessidade, é
+          um compromisso com a dignidade e o bem-estar integral do idoso.
+        </p>
+      </div>
+    </div>
+
+    <div id="popup4" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup('popup4')">&times;</span>
+        <i class="fas fa-hand-holding-usd popup-icon"></i>
+        <h3>Planos Acessíveis</h3>
+        <p>
+          Quando se trata de cuidar de idosos, cada pessoa tem necessidades
+          únicas que devem ser respeitadas e atendidas com carinho e atenção.
+          Por isso, nós que somos focados em cuidado humanizado oferecemos
+          planos acessíveis e flexíveis, ajustáveis conforme a necessidade de
+          cada família. <br /><br />
+          Nosso Plano Básico foi pensado para aqueles que precisam de um suporte
+          essencial no dia a dia, como acompanhamento em atividades diárias e
+          administração de medicamentos. Já o Plano Intermediário vai além,
+          oferecendo cuidados mais detalhados, como assistência durante a noite
+          e acompanhamento em consultas médicas, proporcionando mais segurança
+          para os familiares e autonomia para o idoso. <br /><br />
+          Para quem busca um atendimento mais completo e personalizado, o Plano
+          Premium é ideal. Nele, incluímos suporte 24 horas, atendimento
+          especializado e monitoramento contínuo da saúde, sempre com foco no
+          bem-estar e dignidade do idoso. <br /><br />
+          O principal diferencial de nossos serviços está na flexibilidade:
+          todos os nossos planos podem ser ajustados de acordo com as
+          necessidades específicas de cada cliente. Sabemos que a realidade de
+          cada família é diferente, e por isso, nos comprometemos a oferecer
+          soluções que se adaptem, garantindo o conforto e a tranquilidade que
+          você procura. Independentemente do plano escolhido, nosso compromisso
+          é sempre o mesmo: proporcionar um cuidado humanizado, respeitoso e que
+          priorize a qualidade de vida de quem mais precisa. Aqui, o idoso não é
+          apenas um cliente, mas uma pessoa com uma história, merecendo o máximo
+          de atenção e respeito.
+        </p>
+      </div>
+    </div>
+
+    <!-- Seção de Serviços -->
+    <section class="services" id="servicos">
+      <h2>Nossos Serviços</h2>
+      <div class="services-container">
+        <div class="service">
+          <img
+            src="./assets/acompanhamento-jardim.jpg"
+            alt="Acompanhamento para Idosos"
+          />
+          <p>Acompanhamento para Idosos</p>
+        </div>
+        <div class="service">
+          <img
+            src="./assets/aferindo-pressão.jpg"
+            alt="Cuidados de Enfermagem Domiciliar"
+          />
+          <p>Cuidados Domiciliar</p>
+        </div>
+        <div class="service">
+          <img src="./assets/hospitalar.jpg" alt="Cuidado Hospitalar" />
+          <p>Cuidado Hospitalar</p>
+        </div>
+        <div class="service">
+          <img
+            src="./assets/acompanhamento-hospitalar.jpg"
+            alt="Cuidados Paliativos"
+          />
+          <p>Cuidados Paliativos</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Testemunhos -->
+    <section class="testimonials" id="clientes">
+      <h2>O que Nossos Clientes Dizem</h2>
+      <div class="testimonial">
+        <p>
+          "A equipe do Cuidar no Lar fez toda a diferença na recuperação do meu
+          pai, sempre atenciosos e profissionais."
+        </p>
+        <p><strong>- Maria Silva</strong></p>
+      </div>
+      <div class="testimonial">
+        <p>
+          "Recebi o suporte que precisava para cuidar da minha mãe em casa.
+          Recomendo o Cuidar no Lar."
+        </p>
+        <p><strong>- José Almeida</strong></p>
+      </div>
+    </section>
+
+    <!-- Seção de Contato -->
+
+    <section id="contato" class="contact">
+      <h2>Entre em Contato</h2>
+      <form action="processar_dados.php" method="POST">
+        <input type="text" name="nome" placeholder="Seu Nome" required />
+        <div class="error-message" id="nome-error"></div>
+
+        <input type="email" name="email" placeholder="Seu E-mail" required />
+        <div class="error-message" id="email-error"></div>
+
+        <input type="tel" name="telefone" placeholder="Seu Telefone" required />
+        <div class="error-message" id="telefone-error"></div>
+
+        <input type="text" name="assunto" placeholder="Assunto (opcional)" />
+
+        <textarea
+          name="mensagem"
+          placeholder="Como podemos ajudar?"
+          required
+        ></textarea>
+        <div class="error-message" id="mensagem-error"></div>
+
+        <button type="submit">Enviar</button>
+        <div class="success-message" id="success-message"></div>
+      </form>
+
+      <!-- Links para redes sociais -->
+      <div class="social-links">
+        <h2>Conecte-se conosco</h2>
+        <a href="https://www.facebook.com/seu_perfil" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/seu_perfil" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/seu_numero" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.tiktok.com/@seu_perfil" target="_blank">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Botão para voltar ao topo -->
+    <button id="scrollToTop"><i class="fas fa-arrow-up"></i></button>
+    <!-- Ícone de seta para cima -->
+
+    <!-- Rodapé -->
+    <footer>
+      <p>Cuidar no Lar &copy; 2024 | Todos os direitos reservados</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+// Alternar o menu hambúrguer
+      document
+        .querySelector(".hamburger")
+        .addEventListener("click", function () {
+          document.querySelector("nav ul").classList.toggle("show");
+        });
+
+      // Fechar o menu ao clicar em um item
+      document.querySelectorAll("nav ul li a").forEach((item) => {
+        item.addEventListener("click", () => {
+          document.querySelector("nav ul").classList.remove("show");
+        });
+      });
