@@ -286,7 +286,18 @@
 
     <section id="contato" class="contact">
       <h2>Entre em Contato</h2>
-      <form id="contactForm">
+      <form
+        id="contactForm"
+        method="post"
+        name="contact"
+        action="*/*"
+        data-netlify="true"
+      >
+        <input
+          type="hidden"
+          name="subject"
+          value="Sales inquiry from mysitename.netlify.app"
+        />
         <input
           type="text"
           name="nome"
@@ -336,16 +347,19 @@
       <!-- Links para redes sociais -->
       <div class="social-links">
         <h2>Conecte-se conosco</h2>
-        <a href="https://www.facebook.com/seu_perfil" target="_blank">
+        <a href="https://www.facebook.com/" target="_blank">
           <i class="fab fa-facebook"></i>
         </a>
         <a href="https://www.instagram.com/cuidarnolar.ad" target="_blank">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://wa.me/seu_numero" target="_blank">
+        <a
+          href="https://wa.me/5532998671907?text=Olá, gostaria de agendar uma avaliação gratuita!"
+          target="_blank"
+        >
           <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://www.tiktok.com/@seu_perfil" target="_blank">
+        <a href="https://www.tiktok.com/@" target="_blank">
           <i class="fab fa-tiktok"></i>
         </a>
       </div>
