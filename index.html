@@ -21,34 +21,25 @@
       <!-- Parte superior com logo e dados de contato -->
       <div class="top-header">
         <div class="logo">
-          <img src="assets/logo-verde.png" alt="Logo" />
+          <img src="assets/logo.png" alt="Logo" />
         </div>
         <div class="contact-info">
-          <div>
+          <div class="info-1">
             <i class="fas fa-clock"></i>
-            <span>Atendimento</span> 24h / 7 dias da semana
+            <p>Atendimento</p>
+            <span>24h / 7 dias da semana</span>
           </div>
-          <div>
+          <div class="info-2">
             <i class="fas fa-envelope"></i>
-            <span>Email</span> <a href="#contato">Enviar Mensagem</a>
+            <p>vanusaag.saude@gmail.com</p>
           </div>
-          <div>
+          <div class="info-3">
             <i class="fas fa-phone"></i>
-            <span>Telefone</span> (32) 99867-1907
+            <p>Telefone</p>
+            <span>(32) 99867-1907</span>
           </div>
         </div>
       </div>
-
-      <div class="menu-toggle" id="menuToggle">☰</div>
-      <nav class="navbar" id="navbar">
-        <ul>
-          <li><a href="#hero">INÍCIO</a></li>
-          <li><a href="#beneficio">BENEFÍCIOS</a></li>
-          <li><a href="#servicos">SERVIÇOS</a></li>
-          <li><a href="#clientes">TESTEMUNHOS</a></li>
-          <li><a href="#contato">CONTATO</a></li>
-        </ul>
-      </nav>
 
       <!-- Parte inferior com o menu de navegação -->
       <nav class="bottom-header">
@@ -67,7 +58,12 @@
       <div class="hero-content">
         <h1>Cuidar no Lar</h1>
         <p>Cuidado humanizado e personalizado no conforto de seu lar</p>
-        <a href="#contato" class="cta-button">Agende sua Avaliação Gratuita</a>
+        <a
+          href="https://wa.me/5532998671907?text=Olá, gostaria de agendar uma avaliação gratuita!"
+          class="cta-button"
+          target="_blank"
+          >Agende sua Avaliação Gratuita</a
+        >
       </div>
     </section>
 
@@ -290,26 +286,50 @@
 
     <section id="contato" class="contact">
       <h2>Entre em Contato</h2>
-      <form action="processar_dados.php" method="POST">
-        <input type="text" name="nome" placeholder="Seu Nome" required />
+      <form id="contactForm">
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Seu Nome"
+          required
+        />
         <div class="error-message" id="nome-error"></div>
 
-        <input type="email" name="email" placeholder="Seu E-mail" required />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Seu E-mail"
+          required
+        />
         <div class="error-message" id="email-error"></div>
 
-        <input type="tel" name="telefone" placeholder="Seu Telefone" required />
+        <input
+          type="tel"
+          name="telefone"
+          id="telefone"
+          placeholder="Seu Telefone"
+          required
+        />
         <div class="error-message" id="telefone-error"></div>
 
-        <input type="text" name="assunto" placeholder="Assunto (opcional)" />
+        <input
+          type="text"
+          name="assunto"
+          id="assunto"
+          placeholder="Assunto (opcional)"
+        />
 
         <textarea
           name="mensagem"
+          id="mensagem"
           placeholder="Como podemos ajudar?"
           required
         ></textarea>
         <div class="error-message" id="mensagem-error"></div>
 
-        <button type="submit">Enviar</button>
+        <button type="submit" id="submit-btn">Enviar</button>
         <div class="success-message" id="success-message"></div>
       </form>
 
@@ -319,7 +339,7 @@
         <a href="https://www.facebook.com/seu_perfil" target="_blank">
           <i class="fab fa-facebook"></i>
         </a>
-        <a href="https://www.instagram.com/seu_perfil" target="_blank">
+        <a href="https://www.instagram.com/cuidarnolar.ad" target="_blank">
           <i class="fab fa-instagram"></i>
         </a>
         <a href="https://wa.me/seu_numero" target="_blank">
@@ -340,6 +360,12 @@
       <p>Cuidar no Lar &copy; 2024 | Todos os direitos reservados</p>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("YOUR_USER_ID"); // Substitua pelo seu ID de usuário
+      })();
+    </script>
   </body>
 </html>

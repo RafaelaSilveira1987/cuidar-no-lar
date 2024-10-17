@@ -38,61 +38,90 @@ document.getElementById("menuToggle").addEventListener("click", function() {
   navbar.classList.toggle("active");
 });
 
-const form = document.querySelector('form');
-const nomeInput = document.querySelector('[name="nome"]');
-const emailInput = document.querySelector('[name="email"]');
-const telefoneInput = document.querySelector('[name="telefone"]');
-const mensagemInput = document.querySelector('[name="mensagem"]');
-const sucessoMensagem = document.querySelector('#success-message');
 
-form.addEventListener('submit', function(event) {
-  event.preventDefault();
 
-  let isValid = true;
+/* Configurando Formulário */
 
-  if (nomeInput.value === '') {
-    nomeInput.classList.add('error');
-    document.getElementById('nome-error').textContent = 'Por favor, insira seu nome.';
-    isValid = false;
-  } else {
-    nomeInput.classList.remove('error');
-    document.getElementById('nome-error').textContent = '';
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  // Adicionando o evento ao botão
+  var submitButton = document.getElementById('submit-btn');
+  submitButton.addEventListener('click', handleSubmit);
 
-  if (!isEmailValid(emailInput.value)) {
-    emailInput.classList.add('error');
-    document.getElementById('email-error').textContent = 'Por favor, insira um endereço de e-mail válido.';
-    isValid = false;
-  } else {
-    emailInput.classList.remove('error');
-    document.getElementById('email-error').textContent = '';
-  }
+  function handleSubmit(event) {
+    event.preventDefault(); // Evitar recarregamento da página
 
-  if (telefoneInput.value === '') {
-    telefoneInput.classList.add('error');
-    document.getElementById('telefone-error').textContent = 'Por favor, insira seu telefone.';
-    isValid = false;
-  } else {
-    telefoneInput.classList.remove('error');
-    document.getElementById('telefone-error').textContent = '';
-  }
+    var nome = document.getElementById("nome").value;
+    var email = document.getElementById("email").value;
+    var telefone = document.getElementById("telefone").value;
+    var assunto = document.getElementById("assunto").value || "Sem assunto";
+    var mensagem = document.getElementById("mensagem").value;
 
-  if (mensagemInput.value === '') {
-    mensagemInput.classList.add('error');
-    document.getElementById('mensagem-error').textContent = 'Por favor, insira sua mensagem.';
-    isValid = false;
-  } else {
-    mensagemInput.classList.remove('error');
-    document.getElementById('mensagem-error').textContent = '';
-  }
+    // Limpar mensagens de erro
+    clearErrors();
 
-  if (isValid) {
-    // Envie o formulário aqui
-    sucessoMensagem.textContent = 'Mensagem enviada com sucesso!';
-  }
-});
+    // Validação dos campos
+    var hasError = false;
 
-function isEmailValid(email) {
-  // Adicione aqui sua lógica de validação de e-mail
-  return true;
+    if (!nome) {
+      document.getElementById("nome-error").innerText = "Por favor, preencha seu nome.";
+      hasError = true;
+    }
+
+    if (!email || !validateEmail(email)) {
+      document.getElementById("email-error").innerText = "Por favor, insira um e-mail válido.";
+      hasError = true;
+    }
+
+    if (!telefone) {
+      document.getElementById("telefone-error").innerText = "Por favor, preencha seu telefone.";
+      hasError = true;
+    }
+
+    if (!mensagem) {
+      document.getElementById("mensagem-error").innerText = "Por favor, escreva sua mensagem.";
+      hasError = true;
+    }
+
+    if (hasError) {
+      return;
+    }
+
+    // Envio para o WhatsApp
+    var whatsappMessage = `Nome: ${nome}\nEmail: ${email}\nTelefone: ${telefone}\nAssunto: ${assunto}\nMensagem: ${mensagem}`;
+    var whatsappUrl = `https://wa.me/5532998671907?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+  
+    // Envio do e-mail
+    sendEmail(nome, email, telefone, assunto, mensagem);
 }
+
+function clearErrors() {
+  document.getElementById("nome-error").innerText = "";
+  document.getElementById("email-error").innerText = "";
+  document.getElementById("telefone-error").innerText = "";
+  document.getElementById("mensagem-error").innerText = "";
+}
+
+function validateEmail(email) {
+  var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+function sendEmail(nome, email, telefone, assunto, mensagem) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "sendEmail.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+              console.log("E-mail enviado com sucesso:", xhr.responseText);
+          } else {
+              console.error("Erro ao enviar o e-mail:", xhr.statusText);
+          }
+      }
+  };
+
+  xhr.send(`nome=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&telefone=${encodeURIComponent(telefone)}&assunto=${encodeURIComponent(assunto)}&mensagem=${encodeURIComponent(mensagem)}`);
+}
+});
