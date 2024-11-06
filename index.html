@@ -233,7 +233,7 @@
 
     <!-- Seção de Serviços -->
     <section class="services" id="servicos">
-      <h2>Nossos Serviços</h2>
+      <h2>O que vamos te oferecer?</h2>
       <div class="services-container">
         <div class="service">
           <img
@@ -265,20 +265,43 @@
 
     <!-- Seção de Testemunhos -->
     <section class="testimonials" id="clientes">
-      <h2>O que Nossos Clientes Dizem</h2>
-      <div class="testimonial">
-        <p>
-          "A equipe do Cuidar no Lar fez toda a diferença na recuperação do meu
-          pai, sempre atenciosos e profissionais."
-        </p>
-        <p><strong>- Maria Silva</strong></p>
-      </div>
-      <div class="testimonial">
-        <p>
-          "Recebi o suporte que precisava para cuidar da minha mãe em casa.
-          Recomendo o Cuidar no Lar."
-        </p>
-        <p><strong>- José Almeida</strong></p>
+      <h2>O que Nossos Clientes Dizem?</h2>
+      <div class="carousel">
+        <div class="carousel-track">
+          <!-- Cartão de Testemunho -->
+          <div class="testimonial-card">
+            <img
+              src="assets/foto-1.jpg"
+              alt=""
+              class="testimonial-image"
+            />
+            <p class="testimonial-text">
+              "Satisfeita com o trabalho eficiente e humanizado dispensado à minha mãe, me dá tranquilidade por saber q está sendo bem cuidada.
+"
+            </p>
+            <p class="testimonial-name">Márcia Martins</p>
+            <p class="testimonial-paciente"><span>Paciente: </span>Maria da Penha</p>
+          </div>
+          <!-- Mais cartões podem ser adicionados aqui -->
+          <div class="testimonial-card">
+            <img
+              src="assets/foto2.jpg"
+              alt="Foto de João"
+              class="testimonial-image"
+            />
+            <p class="testimonial-text">
+              "Profissionais dedicados e confiáveis!"
+            </p>
+            <p class="testimonial-name">João P.</p>
+          </div>
+        </div>
+        <!-- Botões de navegação -->
+        <button class="carousel-button prev" onclick="moveCarousel(-1)">
+          ❮
+        </button>
+        <button class="carousel-button next" onclick="moveCarousel(1)">
+          ❯
+        </button>
       </div>
     </section>
 
@@ -286,84 +309,43 @@
 
     <section id="contato" class="contact">
       <h2>Entre em Contato</h2>
-      <form
-        id="contactForm"
-        method="post"
-        name="contact"
-        action="*/*"
-        data-netlify="true"
-      >
-        <input
-          type="hidden"
-          name="subject"
-          value="Sales inquiry from mysitename.netlify.app"
-        />
-        <input
-          type="text"
-          name="nome"
-          id="nome"
-          placeholder="Seu Nome"
-          required
-        />
-        <div class="error-message" id="nome-error"></div>
-
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Seu E-mail"
-          required
-        />
-        <div class="error-message" id="email-error"></div>
-
-        <input
-          type="tel"
-          name="telefone"
-          id="telefone"
-          placeholder="Seu Telefone"
-          required
-        />
-        <div class="error-message" id="telefone-error"></div>
-
-        <input
-          type="text"
-          name="assunto"
-          id="assunto"
-          placeholder="Assunto (opcional)"
-        />
-
-        <textarea
-          name="mensagem"
-          id="mensagem"
-          placeholder="Como podemos ajudar?"
-          required
-        ></textarea>
-        <div class="error-message" id="mensagem-error"></div>
-
-        <button type="submit" id="submit-btn">Enviar</button>
-        <div class="success-message" id="success-message"></div>
+      <form action="https://formspree.io/f/mdkoggap" method="POST">
+        <label>
+          Nome:
+          <input type="text" name="name" />
+        </label>
+        <label>
+          Email:
+          <input type="email" name="email" />
+        </label>
+        <label>
+          Mensagem:
+          <textarea name="message"></textarea>
+        </label>
+        <!-- your other form fields go here -->
+        <button type="submit">Enviar</button>
       </form>
-
-      <!-- Links para redes sociais -->
-      <div class="social-links">
-        <h2>Conecte-se conosco</h2>
-        <a href="https://www.facebook.com/" target="_blank">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/cuidarnolar.ad" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a
-          href="https://wa.me/5532998671907?text=Olá, gostaria de agendar uma avaliação gratuita!"
-          target="_blank"
-        >
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="https://www.tiktok.com/@" target="_blank">
-          <i class="fab fa-tiktok"></i>
-        </a>
-      </div>
     </section>
+
+    <!-- Links para redes sociais -->
+    <div class="social-links">
+      <h2>Conecte-se conosco</h2>
+      <a href="https://www.facebook.com/" target="_blank">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/cuidarnolar.ad" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a
+        href="https://wa.me/5532998671907?text=Olá, gostaria de agendar uma avaliação gratuita!"
+        target="_blank"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.tiktok.com/@" target="_blank">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
 
     <!-- Botão para voltar ao topo -->
     <button id="scrollToTop"><i class="fas fa-arrow-up"></i></button>
@@ -374,12 +356,6 @@
       <p>Cuidar no Lar &copy; 2024 | Todos os direitos reservados</p>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-      (function () {
-        emailjs.init("YOUR_USER_ID"); // Substitua pelo seu ID de usuário
-      })();
-    </script>
+    <script src="./assets/script.js" defer></script>
   </body>
 </html>

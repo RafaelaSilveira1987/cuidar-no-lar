@@ -98,7 +98,7 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  background: url("./capa1.jpeg") no-repeat center center/cover;
+  background: url("./capa.jpg") no-repeat center center/cover;
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -168,11 +168,12 @@ body {
 /* Seção de Benefícios */
 .benefits {
   padding: 3rem 1rem;
-  background-color: #eafdf9;
+  background-color: #f9f9f9;
   text-align: center;
 }
 
 .benefits h2 {
+  font-size: 1.8rem;
   margin-bottom: 2rem;
 }
 
@@ -302,10 +303,11 @@ body {
 .services {
   padding: 3rem 1rem;
   text-align: center;
-  background-color: #f1f8f4c9;
+  background-color: #eafdf9c9;
 }
 
 .services h2 {
+  font-size: 1.8rem;
   margin-bottom: 2rem;
 }
 
@@ -414,66 +416,182 @@ body {
   box-sizing: border-box;
 }
 
-/* Seção de Testemunhos */
+/* Estilos para a seção de testemunhos */
 .testimonials {
-  padding: 3rem 1rem;
+  padding: 2em;
   background-color: #f9f9f9;
   text-align: center;
 }
 
-.testimonial {
-  margin: 1.5rem 0;
+.testimonials h2 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
 }
+
+.carousel {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+  min-width: 100%;
+  height: 350px;
+  box-sizing: border-box;
+  padding: 1em;
+  background-color: white;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.testimonial-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  color: #01948e;
+}
+
+.testimonial-paciente span {
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px;
+}
+
+.testimonial-paciente p {
+  color: #999;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  background-color: #01948e40;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
 
 /* Seção de Contato */
 .contact {
-  padding: 3rem 1rem;
-  text-align: center;
+  padding: 20px;
+  background-color: #eafdf9c9;
+  border-radius: 10px;
 }
 
 .contact h2 {
+  text-align: center;
+  font-size: 1.8rem;
   margin-bottom: 20px;
 }
 
-.contact form {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
+form {
+  max-width: 500px;
   margin: 0 auto;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  font-family: Arial, sans-serif;
 }
 
-.contact input,
-.contact textarea {
-  margin-bottom: 1rem;
-  padding: 0.75rem;
-  border: 2px solid #ccc;
+/* Estilo para os rótulos */
+label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Estilo para os campos de entrada */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  transition: border-color 0.3s ease-in-out;
+  font-size: 1rem;
 }
 
-.contact input:focus,
-.contact textarea:focus {
-  border-color: #4caf50;
-  outline: none;
+/* Estilo do campo de mensagem (textarea) */
+textarea {
+  resize: vertical; /* Permite redimensionamento vertical */
+  min-height: 100px;
 }
 
-.contact button {
-  padding: 1rem;
-  background-color: #4caf50;
+/* Estilo para o botão de envio */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #01948e;
   color: #fff;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 20px;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
-.contact button:hover {
-  background-color: #3e8e41;
+button[type="submit"]:hover {
+  background-color: #017a75;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact {
+    padding: 15px;
+  }
+
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-button {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+.testimonial {
+  font-size: 1rem;
+  padding: 15px;
+}
+
+.testimonials h2 {
+  font-size: 1.8rem;
 }
 
 /* Rede Social*/
@@ -530,7 +648,7 @@ footer {
 }
 
 #scrollToTop i {
-  font-size: 24px; /* Tamanho do ícone */
+  font-size: 1.8rem; /* Tamanho do ícone */
 }
 
 /* Responsividade */
@@ -573,7 +691,7 @@ footer {
   .contact-info i {
     font-size: 1.2rem; /* Tamanho do ícone ajustado */
     color: #fff;
-}
+  }
 
   .contact-info p {
     font-size: rem;
@@ -620,14 +738,15 @@ footer {
   }
 
   #scrollToTop {
-    bottom: 10px;       /* Ajusta a distância do fundo da tela */
-    right: 60px;        /* Ajusta a distância da lateral direita */
-    padding: 15px;      /* Aumenta o padding para torná-lo mais fácil de tocar */
-    font-size: 20px;    /* Reduz o tamanho da fonte (ícone) para melhor se ajustar à tela menor */
+    display: none;
+    bottom: 10px; /* Ajusta a distância do fundo da tela */
+    right: 70px; /* Ajusta a distância da lateral direita */
+    padding: 15px; /* Aumenta o padding para torná-lo mais fácil de tocar */
+    font-size: 20px; /* Reduz o tamanho da fonte (ícone) para melhor se ajustar à tela menor */
   }
 
   #scrollToTop i {
-    font-size: 20px;    /* Reduz o tamanho do ícone também */
+    font-size: 20px; /* Reduz o tamanho do ícone também */
   }
 }
 
@@ -645,7 +764,7 @@ footer {
     padding: 30px;
     z-index: 1000;
   }
-  
+
   .hero {
     height: 75vh;
   }
@@ -657,10 +776,10 @@ footer {
   .hero .cta-button {
     background-color: #fff;
     color: #009688;
-    padding: 0.8rem 0.8rem;  /* Aumenta o espaçamento interno */
-    font-size: 1rem;     /* Aumenta o tamanho da fonte */
-    width: 90%;           /* O botão ocupará a largura total do container */
-    text-align: center;    /* Centraliza o texto dentro do botão */
+    padding: 0.8rem 0.8rem; /* Aumenta o espaçamento interno */
+    font-size: 1rem; /* Aumenta o tamanho da fonte */
+    width: 90%; /* O botão ocupará a largura total do container */
+    text-align: center; /* Centraliza o texto dentro do botão */
   }
 
   .benefit,
@@ -670,13 +789,13 @@ footer {
   }
 
   #scrollToTop {
-    bottom: 10px;       /* Ajusta a distância do fundo da tela */
-    right: 30px;        /* Ajusta a distância da lateral direita */
-    padding: 15px;      /* Aumenta o padding para torná-lo mais fácil de tocar */
-    font-size: 20px;    /* Reduz o tamanho da fonte (ícone) para melhor se ajustar à tela menor */
+    bottom: 10px; /* Ajusta a distância do fundo da tela */
+    right: 30px; /* Ajusta a distância da lateral direita */
+    padding: 15px; /* Aumenta o padding para torná-lo mais fácil de tocar */
+    font-size: 20px; /* Reduz o tamanho da fonte (ícone) para melhor se ajustar à tela menor */
   }
 
   #scrollToTop i {
-    font-size: 20px;    /* Reduz o tamanho do ícone também */
+    font-size: 20px; /* Reduz o tamanho do ícone também */
   }
 }
