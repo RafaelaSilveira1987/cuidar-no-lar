@@ -13,6 +13,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    
+
   </head>
 
   <body>
@@ -27,11 +29,11 @@
           <div class="info-1">
             <i class="fas fa-clock"></i>
             <p>Atendimento</p>
-            <span>24h / 7 dias da semana</span>
+            <span>24 horas / 7 dias da semana</span>
           </div>
           <div class="info-2">
             <i class="fas fa-envelope"></i>
-            <p>vanusaag.saude@gmail.com</p>
+            <p>cuidarnolar.ad@gmail.com</p>
           </div>
           <div class="info-3">
             <i class="fas fa-phone"></i>
@@ -276,16 +278,16 @@
               class="testimonial-image"
             />
             <p class="testimonial-text">
-              "Satisfeita com o trabalho eficiente e humanizado dispensado à minha mãe, me dá tranquilidade por saber q está sendo bem cuidada.
+              "Satisfeita com o trabalho eficiente e humanizado dispensado à minha mãe, me dá tranquilidade por saber que está sendo bem cuidada.
 "
             </p>
-            <p class="testimonial-name">Márcia Martins</p>
+            <p class="testimonial-name">Márcia Martins</p>
             <p class="testimonial-paciente"><span>Paciente: </span>Maria da Penha</p>
           </div>
           <!-- Mais cartões podem ser adicionados aqui -->
           <div class="testimonial-card">
             <img
-              src="assets/foto2.jpg"
+              src="assets/testimonial1.jpg"
               alt="Foto de João"
               class="testimonial-image"
             />
@@ -308,24 +310,29 @@
     <!-- Seção de Contato -->
 
     <section id="contato" class="contact">
-      <h2>Entre em Contato</h2>
-      <form action="https://formspree.io/f/mdkoggap" method="POST">
-        <label>
-          Nome:
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Email:
-          <input type="email" name="email" />
-        </label>
-        <label>
-          Mensagem:
-          <textarea name="message"></textarea>
-        </label>
-        <!-- your other form fields go here -->
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
+  <h2>Entre em Contato</h2>
+  <form id="contactForm">
+    <label>
+      Nome:
+      <input type="text" id="name" name="name" required/>
+    </label>
+    <label>
+      Telefone:
+      <input type="tel" id="telefone" name="telefone" required/>
+    </label>
+    <label>
+      Email:
+      <input type="email" id="email" name="email" required/>
+    </label>
+    <label>
+      Mensagem:
+      <textarea id="message" name="message"></textarea>
+    </label>
+    <!-- Outros campos do formulário -->
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
 
     <!-- Links para redes sociais -->
     <div class="social-links">
@@ -357,5 +364,15 @@
     </footer>
 
     <script src="./assets/script.js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "9hAJSfAALp1jmZMaj",
+      });
+   })();
+</script>
   </body>
 </html>
