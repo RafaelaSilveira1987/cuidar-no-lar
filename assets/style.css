@@ -661,6 +661,7 @@ footer {
     flex-direction: column; /* Coloca p e span em linhas diferentes */
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
 
   .contact-info p {
@@ -778,6 +779,27 @@ footer {
   }
 }
 
+@media (max-width: 795px) {
+  /* Ajustes para telas menores que 795px */
+  .contact-info div {
+    display: flex;
+    flex-direction: row; /* Coloca p e span em linhas diferentes */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 1rem; /* Tamanho da fonte ajustado */
+    margin-bottom: 4px; /* Espaço entre p e span */
+  }
+
+  .contact-info span {
+    font-size: 0.8rem; /* Tamanho da fonte ajustado */
+  }
+}
+
+
 @media (max-width: 480px) {
   .contact-info div{
     background-color: #009688;
@@ -843,7 +865,10 @@ footer {
     flex-direction: row; /* Coloca p e span em linhas diferentes */
     align-items: center;
     justify-content: center;
+    text-align: center;
     font-size: 1rem;
+    padding: 10px;
+    margin-left: 35px;
   }
 
   .contact-info p {
